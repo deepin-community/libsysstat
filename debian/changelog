@@ -1,0 +1,147 @@
+libsysstat (0.4.4-1) unstable; urgency=medium
+
+  [ Alf Gaida ]
+  * Switched to gbp
+  * Bumped Standards-Version to 4.4.0, no changes needed
+
+  [ Andrew Lee (李健秋) ]
+  * New upstream release.
+  * Added myself as uploader.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 06 Jan 2021 06:29:33 +0800
+
+libsysstat (0.4.2-1) unstable; urgency=medium
+
+  * Cherry-picking new upstream release 0.4.2.
+  * Bump Standards to 4.3.0, no changes needed
+  * Dropped d/compat, use debhelper-compat = 12, no changes needed
+  * Bumped minimum version lxqt-build-tools (>= 0.6.0~)
+  * Added Build-Depends-Package field to symbols
+  * Fixed years in d/copyright
+  * Added d/upstream/metadata
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 27 Jan 2019 13:53:21 +0100
+
+libsysstat (0.4.1-2) unstable; urgency=medium
+
+  * lxqt-build-tools >= 0.5.0~ is needed
+
+ -- Alf Gaida <agaida@siduction.org>  Wed, 23 May 2018 03:26:50 +0200
+
+libsysstat (0.4.1-1) unstable; urgency=medium
+
+  * Cherry-picking new upstream release 0.4.1.
+  * Fixed watchfile url to lxqt
+
+ -- Alf Gaida <agaida@siduction.org>  Wed, 23 May 2018 02:18:52 +0200
+
+libsysstat (0.4.0-4) unstable; urgency=medium
+
+  * Bumped Standards to 4.1.4, no changes needed
+  * Bumped compat to 11
+  * Bumped debhelper to >= 11~
+  * Fixed VCS fields for salsa
+  * Fixed Homepage and Source to lxqt
+  * Bumped years in copyright
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 27 Apr 2018 18:17:12 +0200
+
+libsysstat (0.4.0-3) unstable; urgency=medium
+
+  * Bumped Standards to 4.1.2, no changes needed
+  * Removed branch from VCS fields
+  * Removed gbp.conf
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 14 Dec 2017 17:15:21 +0100
+
+libsysstat (0.4.0-2) unstable; urgency=medium
+
+  * Transition to unstable
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 04 Dec 2017 03:26:17 +0100
+
+libsysstat (0.4.0-1) experimental; urgency=medium
+
+  * Cherry-picking new upstream release 0.4.0.
+  * Switched to experimental
+  * Bumped Standards to 4.1.0
+  * Make a separated dh_missing override
+  * Bumped needed versions
+  * Fixed years in copyright
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 23 Sep 2017 18:25:57 +0200
+
+libsysstat (0.3.3-1) unstable; urgency=medium
+
+  * Cherry-picking new upstream-release 0.3.3.
+  * Removed build dependencies:
+    - cmake
+    - pkg-config
+    - qttools5-dev
+    - qttools5-dev-tools
+  * Added build-dependency lxqt-build-tools (>= 0.3.0)
+  * Fixed typo in VCS-Fields
+  * Removed --parallel from debian/rules, standard compat 10
+  * Set CMAKE_BUILD_TYPE=RelWithDebInfo
+  * Set LC_ALL=C.UTF-8
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 11 Dec 2016 23:14:23 +0100
+
+libsysstat (0.3.2-1) unstable; urgency=medium
+
+  * Cherry-picking new upstream release 0.3.2
+  * Bump compat to 10
+  * Build depend on debhelper (>= 10)
+  * Fixed VCS-Fields, use secure uri's
+  * Bumped standards to 3.9.8, no changes needed
+  * Fixed Format field in copyright, use a secure uri
+  * Bumped years in copyright
+  * Added README.md to docs
+  * Added hardening flags to rules
+  * Fixed debian/watch
+  * Added a valid upstream signing-key
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 17 Sep 2016 23:50:00 +0200
+
+libsysstat (0.3.1-2) unstable; urgency=medium
+
+  * Remove dbg package in favor of dbgsym.
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 26 Dec 2015 17:10:46 +0100
+
+libsysstat (0.3.1-1) unstable; urgency=medium
+
+  * Cherry-picking upstream version 0.3.1.
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 01 Nov 2015 00:15:25 +0100
+
+libsysstat (0.3.0+20150806-1) unstable; urgency=medium
+
+  [ Alf Gaida ]
+  * Initial release (Closes: #761270)
+  * Initial debian files
+  * symbols file added - tested for amd64 and i386
+  * Added .gitignore
+  * Cherry-picking upstream version 0.3.0+201500806
+  * Fixed copyright to LGPL2.1+ only
+  * Added linker flags to rules
+  * Added upstream signing key
+  * Changed mail address czchen
+
+  [ Andrew Lee (李健秋) ]
+  * Adding upstream version 0.3.0.
+
+  [ Shih-Yuan Lee (FourDollars) ]
+  * Imported Upstream version 0.3.0
+  * Merge branch 'upstream' into debian
+  * Add debian/gbp.conf for xz compression format.
+  * Merge remote-tracking branch 'origin/fix-multiarch'
+
+  [ Wei-Cheng Pan ]
+  * fix multiarch install path
+  * do not install files that do not exist
+
+  [ Wen.Liao ]
+  * Remove un-needed dependency: libqt5xdg-dev
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Tue, 22 Sep 2015 21:35:12 +0800
