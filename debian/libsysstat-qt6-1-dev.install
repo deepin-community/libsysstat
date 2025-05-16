@@ -1,0 +1,7 @@
+usr/include/sysstat-qt*/
+usr/lib/*/libsysstat-qt*.so
+usr/lib/*/pkgconfig/sysstat-qt*.pc
+usr/share/cmake/sysstat-qt*/sysstat-qt*-config-version.cmake
+usr/share/cmake/sysstat-qt*/sysstat-qt*-config.cmake
+usr/share/cmake/sysstat-qt*/sysstat-qt*-targets-relwithdebinfo.cmake
+usr/share/cmake/sysstat-qt*/sysstat-qt*-targets.cmake

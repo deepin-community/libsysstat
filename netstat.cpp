@@ -38,13 +38,13 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
     connect(mTimer, SIGNAL(timeout()), SLOT(timeout()));
 
 
-    QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), QString::SkipEmptyParts));
+    QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), Qt::SkipEmptyParts));
 
-    rows.erase(rows.begin(), rows.begin() + 2);
+    rows.erase(rows.cbegin(), rows.cbegin() + 2);
 
-    for (const QString &row : qAsConst(rows))
+    for (const QString &row : std::as_const(rows))
     {
-        QStringList tokens = row.split(QLatin1Char(':'), QString::SkipEmptyParts);
+        QStringList tokens = row.split(QLatin1Char(':'), Qt::SkipEmptyParts);
         if (tokens.size() != 2)
             continue;
 
@@ -52,13 +52,11 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
     }
 }
 
-NetStatPrivate::~NetStatPrivate()
-{
-}
+NetStatPrivate::~NetStatPrivate() = default;
 
 void NetStatPrivate::timeout()
 {
-    QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), QString::SkipEmptyParts));
+    QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), Qt::SkipEmptyParts));
 
 
     if (rows.size() < 2)
@@ -67,22 +65,22 @@ void NetStatPrivate::timeout()
     QStringList names = rows[1].split(QLatin1Char('|'));
     if (names.size() != 3)
         return;
-    QStringList namesR = names[1].split(QLatin1Char(' '), QString::SkipEmptyParts);
-    QStringList namesT = names[2].split(QLatin1Char(' '), QString::SkipEmptyParts);
+    QStringList namesR = names[1].split(QLatin1Char(' '), Qt::SkipEmptyParts);
+    QStringList namesT = names[2].split(QLatin1Char(' '), Qt::SkipEmptyParts);
     int receivedIndex    =                 namesR.indexOf(QLatin1String("bytes"));
     int transmittedIndex = namesR.size() + namesT.indexOf(QLatin1String("bytes"));
 
-    rows.erase(rows.begin(), rows.begin() + 2);
+    rows.erase(rows.cbegin(), rows.cbegin() + 2);
 
-    for (const QString &row : qAsConst(rows))
+    for (const QString &row : std::as_const(rows))
     {
-        QStringList tokens = row.split(QLatin1Char(':'), QString::SkipEmptyParts);
+        QStringList tokens = row.split(QLatin1Char(':'), Qt::SkipEmptyParts);
         if (tokens.size() != 2)
             continue;
 
         QString interfaceName = tokens[0].trimmed();
 
-        QStringList data = tokens[1].split(QLatin1Char(' '), QString::SkipEmptyParts);
+        QStringList data = tokens[1].split(QLatin1Char(' '), Qt::SkipEmptyParts);
         if (data.size() < transmittedIndex)
             continue;
 
@@ -121,8 +119,6 @@ NetStat::NetStat(QObject *parent)
     connect(impl, SIGNAL(update(unsigned,unsigned)), this, SIGNAL(update(unsigned,unsigned)));
 }
 
-NetStat::~NetStat()
-{
-}
+NetStat::~NetStat() = default;
 
 }
