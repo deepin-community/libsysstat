@@ -1,14 +1,109 @@
-libsysstat (0.4.4-1) unstable; urgency=medium
+libsysstat (1.1.0-1) unstable; urgency=medium
+
+  * New upstream version 1.1.0
+  * d/copyright: Update copyright year.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Wed, 04 Dec 2024 01:12:13 +0800
+
+libsysstat (1.0.0-1) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 27 Nov 2024 18:29:10 +0100
+
+libsysstat (1.0.0-1~exp2) experimental; urgency=medium
+
+  * debian/control: build-deps on qt6-base-dev (>= 6.7.2).
+  * debian/control: bump to Standards-version to 4.7.0, no changes needed.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sun, 06 Oct 2024 17:24:19 +0200
+
+libsysstat (1.0.0-1~exp1) unstable; urgency=medium
+
+  * New upstream version 1.0.0
+  * Clean up of group membership after 2nd calls.
+  * debian/control: build-deps on lxqt-build-tools (>= 2.0.0~).
+  * Run wrap-and-sort.
+  * debian/control: build-deps on qt6-base-dev (>= 6.6.0~).
+  * Bump libsysstat-qt5-0 to libsysstat-qt6-1.
+  * debian/libsysstat-qt5-0.symbols: drop.
+  * debian/rules: Drop --fail-missing argument to dh_missing which is now
+    default in debhelper 13.
+  * debian/salsa-ci.yml: build against to experimental.
+  * debian/control: build-deps on lxqt-build-tools (>= 2.0.0+really2.0.0~).
+  * debian/salsa-ci.yml: disable reprotest as not supported experimental
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Fri, 06 Sep 2024 18:54:11 +0200
+
+libsysstat (0.4.6-4) unstable; urgency=medium
+
+  * New upstream version 1.0.0
+  * Clean up of group membership after 2nd calls.
+  * debian/control: build-deps on lxqt-build-tools (>= 2.0.0~).
+  * Run wrap-and-sort.
+  * debian/control: build-deps on qt6-base-dev (>= 6.6.0~).
+  * Bump libsysstat-qt5-0 to libsysstat-qt6-1.
+  * debian/libsysstat-qt5-0.symbols: drop.
+  * debian/rules: Drop --fail-missing argument to dh_missing which is now
+    default in debhelper 13.
+  * debian/salsa-ci.yml: build against to experimental.
+  * debian/control: build-deps on lxqt-build-tools (>=
+    2.0.0+really2.0.0~).
+  * debian/salsa-ci.yml: disable reprotest as not supported experimental
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Fri, 06 Sep 2024 18:53:27 +0200
+
+libsysstat (0.4.6-3) unstable; urgency=medium
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Add soversion in install files to prevent accidently bumping soversion.
+  * Change team email to <team+lxqt@tracker.debian.org>
+  * Update Build-Depends
+  * update changelog
+
+  [ Aaron Rainbolt ]
+  * debian/rules: Removed obsolete '-Wl,--as-needed' linker flag.
+  * debian/copyright: Updated copyright file.
+
+  [ Andrew Lee (李健秋) ]
+  * Updated changelog
+  * Bump Standards-Version to 4.6.2
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Update d/copyright
+
+  [ Andrew Lee (李健秋) ]
+  * debian/upstream/metadata: correct the git Repository url as itʼs
+    different from Repository-Browse.
+  * debian/copyright: update.
+
+  [ Andrew Lee (李健秋) ]
+  * Releasing debian version 0.4.6-3.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sat, 17 Jun 2023 10:31:29 +0200
+
+libsysstat (0.4.6-2) unstable; urgency=medium
+
+  * Fix d/watch for GitHub.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Mon, 21 Nov 2022 22:52:41 +0800
+
+libsysstat (0.4.6-1) unstable; urgency=medium
 
   [ Alf Gaida ]
-  * Switched to gbp
-  * Bumped Standards-Version to 4.4.0, no changes needed
+  * Switched to gbp.
 
   [ Andrew Lee (李健秋) ]
   * New upstream release.
   * Added myself as uploader.
 
- -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 06 Jan 2021 06:29:33 +0800
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Bump Standards-Version to 4.6.0.
+  * Bump compat to 13.
+  * Add Rules-Requires-Root: no.
+  * Fix wrong field name in d/upstream/metadata.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Wed, 09 Feb 2022 23:16:01 +0800
 
 libsysstat (0.4.2-1) unstable; urgency=medium
 

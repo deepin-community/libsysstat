@@ -40,9 +40,7 @@ MemStatPrivate::MemStatPrivate(MemStat *parent)
     mSources << QLatin1String("memory") << QLatin1String("swap");
 }
 
-MemStatPrivate::~MemStatPrivate()
-{
-}
+MemStatPrivate::~MemStatPrivate() = default;
 
 void MemStatPrivate::timeout()
 {
@@ -53,10 +51,10 @@ void MemStatPrivate::timeout()
     qulonglong swapTotal = 0;
     qulonglong swapFree = 0;
 
-    const QStringList rows = readAllFile("/proc/meminfo").split(QLatin1Char('\n'), QString::SkipEmptyParts);
+    const QStringList rows = readAllFile("/proc/meminfo").split(QLatin1Char('\n'), Qt::SkipEmptyParts);
     for (const QString &row : rows)
     {
-        QStringList tokens = row.split(QLatin1Char(' '), QString::SkipEmptyParts);
+        QStringList tokens = row.split(QLatin1Char(' '), Qt::SkipEmptyParts);
         if (tokens.size() != 3)
             continue;
 
@@ -112,8 +110,6 @@ MemStat::MemStat(QObject *parent)
     connect(impl, SIGNAL(swapUpdate(float)), this, SIGNAL(swapUpdate(float)));
 }
 
-MemStat::~MemStat()
-{
-}
+MemStat::~MemStat() = default;
 
 }
